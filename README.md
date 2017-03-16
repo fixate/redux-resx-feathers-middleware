@@ -1,0 +1,38 @@
+# redux-resx-feathers-middleware
+
+Middleware for [redux-resx](https://github.com/fixate/redux-resx-feathers-middleware) using
+`feathers-client`.
+
+```shell
+npm install --save redux-resx-feathers-middleware
+```
+
+## Usage
+
+```javascript
+import resxMiddleware from 'redux-resx-feathers-middleware';
+
+import feathers from 'feathers-client';
+import rest from 'feathers-client/rest';
+
+import reducers from './reducers';
+
+// Setup your feathers app - probably in a different file
+const app = feathers().configure(rest('/api').fetch(fetch));
+
+export default function createAppStore() {
+  return createStore(
+    reducers,
+    compose(
+      applyMiddleware(
+        resxMiddleware(app)
+      ),
+      window.devToolsExtension ? window.devToolsExtension() : (f) => f
+    )
+  );
+}
+```
+
+## Websocket support
+
+Not yet - all we'd all is events that fire receivers to what is here.
