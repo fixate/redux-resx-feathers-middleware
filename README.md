@@ -1,6 +1,6 @@
 # redux-resx-feathers-middleware
 
-Middleware for [redux-resx](https://github.com/fixate/redux-resx-feathers-middleware) using
+Middleware for [redux-resx](https://github.com/fixate/redux-resx) using
 `feathers-client`.
 
 ```shell
