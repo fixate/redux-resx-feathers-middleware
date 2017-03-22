@@ -1,6 +1,6 @@
 # redux-resx-feathers-middleware
 
-Middleware for [redux-resx](https://github.com/fixate/redux-resx-feathers-middleware) using
+Middleware for [redux-resx](https://github.com/fixate/redux-resx) using
 `feathers-client`.
 
 ```shell
@@ -35,4 +35,4 @@ export default function createAppStore() {
 
 ## Websocket support
 
-Not yet - all we'd all is events that fire receivers to what is here.
+Not yet - all we'd need to add is websocket events handlers that fire receiver actions
