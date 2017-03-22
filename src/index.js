@@ -1,4 +1,4 @@
-import { isResxAction, createActions, types } from 'redux-resx';
+import { isRequestAction, createActions, types } from 'redux-resx';
 
 const API_ACTIONS = {
   [types.RESOURCE_FIND_REQUEST]: ['findReceive', 'findError'],
@@ -34,7 +34,7 @@ function call(feathers, action) {
 
 export default function createApiMiddleware(feathers) {
   return () => next => (action) => {
-    if (!isResxAction(action)) {
+    if (!isRequestAction(action)) {
       return next(action);
     }
 
