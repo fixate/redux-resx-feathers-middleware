@@ -35,4 +35,4 @@ export default function createAppStore() {
 
 ## Websocket support
 
-Not yet - all we'd all is events that fire receivers to what is here.
+Not yet - all we'd need to add is websocket events handlers that fire receiver actions
