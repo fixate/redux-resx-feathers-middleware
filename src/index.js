@@ -32,10 +32,6 @@ function call(feathers, action) {
   }
 }
 
-function isPaginated(result) {
-  return result.limit && result.data && result.total;
-}
-
 export default function createApiMiddleware(feathers) {
   return () => next => (action) => {
     if (!isRequestAction(action)) {
@@ -47,16 +43,7 @@ export default function createApiMiddleware(feathers) {
 
     return call(feathers, action)
       .then((result) => {
-        if (isPaginated(result)) {
-          next(Object.assign(receiver(result.data), {
-            limit: result.limit,
-            total: result.total,
-            skip: result.skip,
-            requestAction: action,
-          }));
-        } else {
-          next(Object.assign(receiver(result), { requestAction: action }));
-        }
+        next(Object.assign(receiver(result), { requestAction: action }));
         return result;
       })
       .catch((err) => {
