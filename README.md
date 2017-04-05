@@ -79,7 +79,7 @@ export const UsersPage = React.createClass({
 
   componentWillMount() {
     const { findUsers } = this.props;
-    findUsers({ roles: 'admin' });
+    findUsers({ query: { roles: 'admin' } });
   },
 
   render() {
