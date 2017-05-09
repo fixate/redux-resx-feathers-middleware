@@ -6,7 +6,7 @@ function isPaginated(result) {
 
 export default function paginationReducer({ perPage }) {
   return (state, action, options) => {
-    const actions = createActions(options);
+    const actions = createActions(action.ns, options);
     const { result, requestAction: ra } = action;
     if (action.type != types.RESOURCE_FIND_SUCCESS) { return state; }
 
