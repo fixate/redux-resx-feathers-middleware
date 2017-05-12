@@ -23,7 +23,7 @@ export default function paginationReducer({ perPage }) {
 
     if (isPaginated(result)) {
       Object.assign(nextState,  {
-        items: state.items.concat(result.data),
+        items: result.skip > 0 ? state.items.concat(result.data) : result.data,
         pagination: {
           total: result.total,
           limit: result.limit,
