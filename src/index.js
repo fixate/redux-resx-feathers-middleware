@@ -38,6 +38,9 @@ export default function createApiMiddleware(feathers) {
       return next(action);
     }
 
+    // Allow action to propogate.
+    next(action);
+
     const actions = createActions(action.ns, { name: action.resxns });
     const [receiver, error] = API_ACTIONS[action.type].map(fn => actions[fn]);
 
