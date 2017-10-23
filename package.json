@@ -1,6 +1,6 @@
 {
   "name": "redux-resx-feathers-middleware",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "description": "Feathers middleware for redux-resx",
   "main": "index.js",
   "author": "Stan Bondi <stan@fixate.it>",
